@@ -1,0 +1,21 @@
+<mat-nav-list>
+    <div class="logo py-4">
+      <img src="../../../assets/log.png" alt="Logo" />
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">Opciones</h2>
+  
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+      <mat-icon>home</mat-icon> Inicio
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/product-view">
+      <mat-icon>bookmark</mat-icon> Productos
+    </a>
+    <a *ngIf="user && !user.admin" mat-list-item routerLink="/new-sale">
+      <mat-icon>fact_check</mat-icon>Factura</a>
+    <a *ngIf="user && user.admin" mat-list-item routerLink="/clients">
+      <mat-icon>face</mat-icon>Clientes</a>
+    <a *ngIf="user" mat-list-item routerLink="/sales-view">
+      <mat-icon>point_of_sale</mat-icon>Ventas</a>
+</mat-nav-list>
+  
